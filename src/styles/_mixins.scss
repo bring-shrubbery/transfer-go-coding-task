@@ -1,0 +1,16 @@
+@mixin mx($m) {
+  margin-left: $m;
+  margin-right: $m;
+}
+
+@mixin make-rounded-corner-classes(
+  $classname,
+  $variable-prefix,
+  $steps: 0 1 2 4 8
+) {
+  @each $step in $steps {
+    .#{$classname}-#{$step} {
+      border-radius: var(#{$variable-prefix}-#{$step});
+    }
+  }
+}

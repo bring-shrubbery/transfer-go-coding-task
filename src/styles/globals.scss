@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+:root {
+  --color-green-500: #24d744;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-text-inverse: #ffffff;
+
+  --container-size-xs: 20rem; /* 320px */
+  --container-size-sm: 24rem; /* 384px */
+  --container-size-md: 28rem; /* 448px */
+  --container-size-lg: 32rem; /* 512px */
+  --container-size-xl: 36rem; /* 576px */
+  --container-size-2xl: 42rem; /* 672px */
+  --container-size-3xl: 48rem; /* 768px */
+  --container-size-4xl: 56rem; /* 896px */
+  --container-size-5xl: 64rem; /* 1024px */
+  --container-size-6xl: 72rem; /* 1152px */
+  --container-size-7xl: 80rem; /* 1280px */
+
+  --box-shadow-default: 0px 0px 20px rgba(0, 0, 0, 0.5);
+
+  --border-radius-0: 0;
+  --border-radius-1: 2px;
+  --border-radius-2: 4px;
+  --border-radius-4: 8px;
+  --border-radius-8: 16px;
+}

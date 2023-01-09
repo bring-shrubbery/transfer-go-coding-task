@@ -1,0 +1,20 @@
+@use "/src/styles/mixins" as mx;
+
+@include mx.make-rounded-corner-classes(button-radius, --border-radius);
+
+.button {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: none;
+
+  padding: 8px;
+
+  font-size: 1rem;
+}
+
+.primary {
+  background-color: var(--color-green-500);
+  color: var(--color-text-inverse);
+}
