@@ -23,5 +23,5 @@ export const clientSchema = z.object({
  * @type {{ [k in keyof z.infer<typeof clientSchema>]: z.infer<typeof clientSchema>[k] | undefined }}
  */
 export const clientEnv = {
-	NEXT_PUBLIC_API_HOST: process.env.NEXT_PUBLIC_API_HOST,
+	NEXT_PUBLIC_API_HOST: process.env.NEXT_PUBLIC_API_HOST || "https://my.transfergo.com/",
 };
