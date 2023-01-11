@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Transfer Go Coding Task
 
-## Getting Started
+> Deployed preview available at: http://tgo-antoni-task.vercel.app/
 
-First, run the development server:
+## Implementation details
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Tech used: TypeScript, React, Next.js, SCSS Modules, CSS variables, React Query, React Hook Form, Zod, RadixUI (for label and select), React Icons, use-debounce hook.
+- The app does all the requirements that were written down in the provided spec PDF.
+- The flags used are just emoji's, that are automatically inferred form currency code using a npm package.
+- The app looks very close to the design, with only emojis, swap icon, and number input formatting not matching the design.
+- No Next.js features were used, so this widget can be thrown into any other project, as long as it supports SCSS.
+- Currency select is using `@radix-ui/select` as a headless select component, with SCSS styling applied. Same goes for the input labels (using `@radix-ui/label`).
+- Form is implemented using React Hook Form in conjunction with Zod, which also allows creating API types from a validation schema.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Things that could be improved
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Number input implementation in the form is quite verbose. It can be refactored into a separate `CurrencyInput` component, which would abstract away copmlexity of currency input, and only expose simple component that forwards a ref, so that it can be used with react-hook-form's `register` function.
+- Forms don't have any error display, so if there are any errors, they will not appear at all.
+- Some micro-interactions are not specified in the design, for example hover states for the button, select list, etc. This is something that I'd ask designer to provide in a real project.
+- I generally like to keep forms separate from the fetching logic (in another component). If I had time I'd try to move out the data fetching into the `ExchangeWidget` component, while keeping all the form state management in the `ExchangeForm`.
+- Form state could be optimised both UX and DX-wise by implementing a state machine for it. This is not necessarily something I'd want to do in a real project, since it can be hard to understand a state machine for developers who don't have experience with them.
+- SCSS is a mid-way solution between performance and developer experience. In a big application it would be hard to keep other developers from adding unnecessary repetitions in the CSS, resulting in way bigger source files than possible with TailwindCSS. Of course SCSS has better performance than any emotion/styled-components based solution, but it sacrifices developer productivity when compared to other solutions, while not providing the absolute smallest bundle size in big applications. Summarizing, I'd try to aim for both better DX and performance (by using Tailwind), instead of just the theoretically ideal performance that SCSS enables.

@@ -16,6 +16,7 @@ import { useFxRatesMutation } from "../lib/queries/api";
 import { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { RateInfo } from "./RateInfo";
+import { NumericFormat } from "react-number-format";
 
 export interface ExchangeFormProps {}
 
@@ -116,41 +117,45 @@ export const ExchangeForm = (props: ExchangeFormProps) => {
 
       <Stack dir="row">
         <BadLabel label="amount:">
-          <Input
+          <NumericFormat
             id="amount-input"
-            type="number"
-            suffix={formValues.from}
-            {...register("amount", {
-              valueAsNumber: true,
-              onChange: (e) => {
-                const value = !e.target.value ? null : Number(e.target.value);
-                if (value) {
-                  handleAmountChange(value);
-                }
-              },
-            })}
+            decimalScale={2}
+            fixedDecimalScale
+            customSuffix={formValues.from}
+            value={formValues.amount}
+            onChange={(e) => {
+              const value = !e.target.value ? null : Number(e.target.value);
+              if (value && initialSubmitDone) {
+                handleAmountChange(value);
+              }
+            }}
+            customInput={Input}
           />
         </BadLabel>
 
         {initialSubmitDone && (
           <BadLabel label="converted to:">
-            <Input
+            <NumericFormat
               id="converted-to-input"
-              type="number"
-              suffix={formValues.to}
+              customSuffix={formValues.to}
+              customInput={Input}
+              decimalScale={2}
+              fixedDecimalScale
               value={formValues.convertedTo ?? ""}
-              onChange={(e) => {
-                const value = !e.target.value ? null : Number(e.target.value);
-                setValue("convertedTo", value);
+              onValueChange={(values) => {
+                // const value = !e.target.value ? null : Number(e.target.value);
+                setValue("convertedTo", values.floatValue);
 
-                if (value) {
-                  handleConvertedToChange(value);
+                if (values.floatValue) {
+                  handleConvertedToChange(values.floatValue);
                 }
               }}
             />
           </BadLabel>
         )}
       </Stack>
+
+      <div style={{ height: "var(--size-8)" }} />
 
       {initialSubmitDone && rate && (
         <RateInfo rate={rate} from={formValues.from} to={formValues.to} />
