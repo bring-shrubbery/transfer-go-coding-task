@@ -1,0 +1,38 @@
+.trigger {
+  all: unset;
+  background: var(--color-background);
+
+  font-size: var(--font-size-lg);
+
+  border-bottom: 1px solid var(--color-gray-300);
+  padding-bottom: var(--size-2);
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content {
+}
+
+.viewport {
+  width: 100%;
+  background-color: var(--color-background);
+  box-shadow: var(--box-shadow-sm);
+  border: 1px solid var(--color-gray-200);
+}
+
+.item {
+  outline: none;
+  padding: var(--size-4);
+  border-bottom: 1px solid var(--color-gray-200);
+  font-size: var(--font-size-md);
+}
+
+.item[data-highlighted] {
+  background: var(--color-gray-100);
+}
+
+.item:last-child {
+  border-bottom: none;
+}

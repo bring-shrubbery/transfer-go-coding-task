@@ -1,17 +1,33 @@
-.input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid var(--color-gray-300);
-  padding-bottom: 1px;
+.container {
+  display: flex;
+  width: 100%;
 
-  font-size: 1.5rem;
+  .input {
+    width: 100%;
+    outline: none;
+    border: none;
 
-  &:focus {
-    border-bottom-width: 2px;
-    padding-bottom: 0;
+    font-size: 1.5rem;
   }
 
-  &:hover {
-    border-bottom-color: var(--color-gray-400);
+  .suffix {
+    display: block;
+    padding-top: var(--size-2);
+    padding-right: var(--size-4);
+    color: var(--color-gray-400);
+  }
+
+  .input,
+  .suffix {
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: 1px;
+  }
+}
+
+.container:focus-within {
+  .input,
+  .suffix {
+    border-bottom-width: 2px;
+    padding-bottom: 0;
   }
 }

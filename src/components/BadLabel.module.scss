@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+}
+
+.label {
+  display: block;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-gray-400);
+  padding-bottom: var(--size-4);
+}

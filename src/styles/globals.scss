@@ -11,6 +11,8 @@ body {
 
 :root {
   --color-green-500: #24d744;
+  --color-sky-500: #3584ee;
+  --color-yellow-500: #fdd008;
 
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
@@ -27,23 +29,65 @@ body {
   --color-text: #000000;
   --color-text-inverse: #ffffff;
 
-  --container-size-xs: 20rem; /* 320px */
-  --container-size-sm: 24rem; /* 384px */
-  --container-size-md: 28rem; /* 448px */
-  --container-size-lg: 32rem; /* 512px */
-  --container-size-xl: 36rem; /* 576px */
-  --container-size-2xl: 42rem; /* 672px */
-  --container-size-3xl: 48rem; /* 768px */
-  --container-size-4xl: 56rem; /* 896px */
-  --container-size-5xl: 64rem; /* 1024px */
-  --container-size-6xl: 72rem; /* 1152px */
-  --container-size-7xl: 80rem; /* 1280px */
+  --container-size-xs: 24rem;
+  --container-size-sm: 26rem;
+  --container-size-md: 28rem;
+  --container-size-lg: 32rem;
+  --container-size-xl: 36rem;
+  --container-size-2xl: 42rem;
+  --container-size-3xl: 48rem;
+  --container-size-4xl: 56rem;
+  --container-size-5xl: 64rem;
+  --container-size-6xl: 72rem;
+  --container-size-7xl: 80rem;
 
   --box-shadow-default: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  --box-shadow-sm: 0px 2px 2px rgba(0, 0, 0, 0.2);
 
   --border-radius-0: 0;
   --border-radius-1: 2px;
   --border-radius-2: 4px;
   --border-radius-4: 8px;
   --border-radius-8: 16px;
+  --border-radius-full: 9999px;
+
+  --font-size-xs: 0.5rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+
+  --size-0: 0px;
+  --size-1: 2px;
+  --size-2: 4px;
+  --size-3: 6px;
+  --size-4: 8px;
+  --size-5: 10px;
+  --size-6: 12px;
+  --size-8: 16px;
+  --size-10: 20px;
+  --size-12: 24px;
+  --size-14: 28px;
+  --size-16: 32px;
+  --size-18: 26px;
+  --size-20: 40px;
+  --size-24: 48px;
+  --size-28: 56px;
+  --size-32: 64px;
+  --size-36: 72px;
+  --size-40: 80px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
 }

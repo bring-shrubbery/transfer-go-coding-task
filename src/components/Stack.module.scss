@@ -1,0 +1,12 @@
+.stack {
+  display: flex;
+  flex-direction: var(--stack-dir);
+  gap: var(--stack-gap);
+  width: var(--stack-width);
+  justify-content: center;
+  align-items: center;
+}
+
+.stack > * {
+  max-height: fit-content;
+}
