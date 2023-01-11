@@ -11,6 +11,7 @@
 - No Next.js features were used, so this widget can be thrown into any other project, as long as it supports SCSS.
 - Currency select is using `@radix-ui/select` as a headless select component, with SCSS styling applied. Same goes for the input labels (using `@radix-ui/label`).
 - Form is implemented using React Hook Form in conjunction with Zod, which also allows creating API types from a validation schema.
+- This was not requested in the spec, but you can click the "swap" button to switch the currencies. If you already clicked "convert" button, it will also swap the calculated currencies and exchange rate.
 
 ## Things that could be improved
 
