@@ -2,6 +2,13 @@
 
 > Deployed preview available at: http://tgo-antoni-task.vercel.app/
 
+## Getting started
+
+```bash
+yarn
+yarn dev
+```
+
 ## Implementation details
 
 - Tech used: TypeScript, React, Next.js, SCSS Modules, CSS variables, React Query, React Hook Form, Zod, RadixUI (for label and select), React Icons, use-debounce hook.
